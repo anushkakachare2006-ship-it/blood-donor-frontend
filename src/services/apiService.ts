@@ -25,7 +25,7 @@ export interface ApiResponse<T = any> {
 }
 
 // Change this to your live backend URL
-const BASE_URL = "https://blood-donor-backend-pnc7.onrender.com"; // add /api if your routes are prefixed
+const BASE_URL = "https://blood-donor-backend-pnc7.onrender.com/api"; // add /api if your routes are prefixed
 
 export const apiService = {
   // Health check
