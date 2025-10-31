@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, User, Phone, Mail, MapPin, Calendar, Droplet, Shield } from 'lucide-react';
 import { apiService, DonorRegistrationData } from '../services/apiService.mock';
-import {sendEmail} from '../components/EmailForm';
+//import {sendEmail} from '../components/EmailForm';
  
 const DonorRegistration = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ const DonorRegistration = () => {
       if (response.success) {
         setSubmitMessage('Registration successful! Thank you for becoming a blood donor. We will contact you when blood matching your type is needed.');
         // Reset form after successful submission
-        await sendEmail({
+       // await sendEmail({
           to_name: formData.fullName,
           to_email: formData.email,
           subject: "Thank you for registering as a blood donor!",
@@ -68,15 +68,15 @@ const DonorRegistration = () => {
             gender: '',
             bloodGroup: '',
             address: '',
-           // city: '',
-            //state: '',
-            //pincode: '',
-            //lastDonation: '',
-            //medicalConditions: '',
-            //emergencyContact: '',
-            //emergencyPhone: '',
-            //agreeTerms: false,
-            //agreeNotifications: false
+            city: '',
+            state: '',
+            pincode: '',
+            lastDonation: '',
+            medicalConditions: '',
+            emergencyContact: '',
+            emergencyPhone: '',
+            agreeTerms: false,
+            agreeNotifications: false
           });
           setStep(1);
           setSubmitMessage('');
